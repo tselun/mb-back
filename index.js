@@ -1,9 +1,11 @@
-const app = require('express')();
-const port = process.env.PORT;
+const express = require('express');
+const app = express();
 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
-app.listen(port, () => { console.log(`port: ${port}`) });
+
+const port = process.env.PORT;
+app.listen(port, () => {console.log(`port: ${port}`)});
 
 const { Client } = require('pg');
 const client = new Client({
@@ -13,6 +15,7 @@ const client = new Client({
   }
 });
 client.connect();
+
 
 app.get('/', (req, res) => { 
     res.sendFile('index.html', {root: __dirname })
