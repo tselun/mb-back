@@ -1,3 +1,7 @@
+// author: stephen chiu
+// date: feb 5, 2021
+// about: backend of message board
+
 const express = require('express');
 const app = express();
 
