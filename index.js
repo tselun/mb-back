@@ -15,8 +15,12 @@ client.connect();
 
 app.get('/', (req, res) => {
     client.query('SELECT * FROM mb;', (err, ret) => {
-        console.log(JSON.stringify(ret));
-        res.send("hello");
+        
+        let str = JSON.stringify(ret);
+        console.log(str);
+
+        res.send(str);
+
         // client.end();
     });
 });
