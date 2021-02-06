@@ -40,9 +40,17 @@ app.post('/add', (req, res) => {
     let { name, msg } = req.body;
     client.query('INSERT INTO mb(name, msg) VALUES($1, $2)', [name, msg], (err, ret) => { 
         if (err) console.log(err);
-        else res.send('new message added');
+        else console.log('new message added');
     });
 })
 
+// delete message
+app.post('/delete', (req, res) => {
+    let { id } = req.body;
+    client.query('DELETE FROM mb WHERE id=($1)', [id], (err, ret) => { 
+        if (err) console.log(err);
+        else console.log('message deleted');
+    });
+})
 
 
