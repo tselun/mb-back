@@ -1,22 +1,14 @@
 {
-  "name": "warehouse-one",
+  "name": "mb",
   "version": "1.0.0",
-  "description": "",
+  "description": "backend of messsage board",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"error: no test specified\" && exit 1",
     "start": "node index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tselun/warehouse-one.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tselun/warehouse-one/issues"
-  },
-  "homepage": "https://github.com/tselun/warehouse-one#readme",
   "dependencies": {
     "express": "^4.17.1",
     "pg": "^8.4.1"
