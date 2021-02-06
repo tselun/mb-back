@@ -26,10 +26,10 @@ app.get('/get', (req, res) => {
     });
 });
 
-app.post('/add', (req, res) => { 
+app.post('/add', (req, res) => {
     let { name, msg } = req.body;
     let str = {
-        text: 'INSERT INTO users(name, msg) VALUES($1, $2)',
+        text: 'INSERT INTO mb(name, msg) VALUES($1, $2)',
         values: [name, msg],
     }
     client.query(str);
