@@ -16,11 +16,12 @@ const client = new Client({
 });
 client.connect();
 
-
+// main interface
 app.get('/', (req, res) => { 
     res.sendFile('index.html', {root: __dirname })
 })
 
+// get all messages
 app.get('/get', (req, res) => {
     client.query('SELECT * FROM mb;', (err, ret) => {
         let str = JSON.stringify(ret);
@@ -28,6 +29,7 @@ app.get('/get', (req, res) => {
     });
 });
 
+// add new message
 app.post('/add', (req, res) => {
     let { name, msg } = req.body;
     client.query('INSERT INTO mb(name, msg) VALUES($1, $2)', [name, msg], (err, ret) => { 
