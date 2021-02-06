@@ -13,9 +13,9 @@ const client = new Client({
 });
 client.connect();
 
-app.get('/', () => {
-    client.query('SELECT * FROM mb;', (err, res) => {
-        console.log(JSON.stringify(res));
+app.get('/', (req, res) => {
+    client.query('SELECT * FROM mb;', (err, ret) => {
+        console.log(JSON.stringify(ret));
         res.send("hello");
         // client.end();
     });
