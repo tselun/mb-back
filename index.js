@@ -16,8 +16,8 @@ client.connect();
 app.get('/', () => {
     client.query('SELECT * FROM mb;', (err, res) => {
         const data = JSON.stringify(res);
-        res.send(data);
-        
+        console.log(data);
+        res.send("hello");
         // client.end();
     });
 });
