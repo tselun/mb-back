@@ -28,8 +28,11 @@ app.get('/get', (req, res) => {
 
 app.post('/add', (req, res) => { 
     let { name, msg } = req.body;
-    console.log(name, msg);
-    client.query("INSERT INTO mb (name,msg) VALUES ($1, $2);", [name, msg]);
+    let str = {
+        text: 'INSERT INTO users(name, msg) VALUES($1, $2)',
+        values: [name, msg],
+    }
+    client.query(str);
 })
 
 
