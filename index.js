@@ -30,7 +30,7 @@ app.post('/add', (req, res) => {
     let { name, msg } = req.body;
     client.query('INSERT INTO mb(name, msg) VALUES($1, $2)', [name, msg], (err, ret) => { 
         if (err) console.log(err);
-        else console.log('inserted new message');
+        else res.send('new message added');
     });
 })
 
