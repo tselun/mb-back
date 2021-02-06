@@ -9,5 +9,5 @@ dependencies:
 * pg
 * express
 
-website:
+site:
 * https://mb-back.herokuapp.com/
