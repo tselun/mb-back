@@ -3,6 +3,7 @@ about:
 
 run:
 * configured for server (need to change connection string)
+* npm i && npm run
 
 dependencies:
 * pg
