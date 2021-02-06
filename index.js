@@ -28,11 +28,10 @@ app.get('/get', (req, res) => {
 
 app.post('/add', (req, res) => {
     let { name, msg } = req.body;
-    let str = {
-        text: 'INSERT INTO mb(name, msg) VALUES($1, $2)',
-        values: [name, msg],
-    }
-    client.query(str);
+    client.query('INSERT INTO mb(name, msg) VALUES($1, $2)', [name, msg], (err, ret) => { 
+        if (err) console.log(err);
+        else console.log('inserted new message');
+    });
 })
 
 
