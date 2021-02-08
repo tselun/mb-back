@@ -3,8 +3,7 @@ about:
 
 run:
 * need to edit connection string to run locally
-* npm i 
-* npm run
+* npm i && npm run
 
 dependencies:
 * pg
